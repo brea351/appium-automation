@@ -1,0 +1,5 @@
+[32mINFO    [0m mobile_tests:test_wifi_toggle.py:19 Opening Network & Internet
+[32mINFO    [0m mobile_tests:settings_page.py:16 Attempting to open Network & Internet
+[32mINFO    [0m mobile_tests:settings_page.py:24 Opened Network & Internet
+[32mINFO    [0m mobile_tests:test_wifi_toggle.py:22 Opening Wi-Fi
+[32mINFO    [0m mobile_tests:settings_page.py:28 Attempting to open Wi-Fi

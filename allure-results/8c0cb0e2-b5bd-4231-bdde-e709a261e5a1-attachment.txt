@@ -1,0 +1,15 @@
+[32mINFO    [0m mobile_tests:test_wifi_toggle.py:12 Opening Network & Internet
+[32mINFO    [0m mobile_tests:settings_page.py:18 Attempting to open Network & Internet
+[32mINFO    [0m mobile_tests:settings_page.py:28 Opened Network & Internet
+[32mINFO    [0m mobile_tests:test_wifi_toggle.py:15 Opening Wi-Fi
+[32mINFO    [0m mobile_tests:settings_page.py:33 Attempting to open Wi-Fi
+[32mINFO    [0m mobile_tests:settings_page.py:43 Opened Wi-Fi
+[32mINFO    [0m mobile_tests:test_wifi_toggle.py:18 Validating Wi-Fi screen
+[32mINFO    [0m mobile_tests:settings_page.py:48 Checking if Wi-Fi screen is open
+[32mINFO    [0m mobile_tests:settings_page.py:59 Wi-Fi screen open: True
+[32mINFO    [0m mobile_tests:test_wifi_toggle.py:21 Toggling Wi-Fi
+[32mINFO    [0m mobile_tests:settings_page.py:67 Attempting to toggle Wi-Fi
+[32mINFO    [0m mobile_tests:settings_page.py:77 Wi-Fi state before: true
+[32mINFO    [0m mobile_tests:settings_page.py:82 Clicked Wi-Fi toggle
+[32mINFO    [0m mobile_tests:settings_page.py:91 Wi-Fi state after: false
+[32mINFO    [0m mobile_tests:test_wifi_toggle.py:24 State before: true, State after: false

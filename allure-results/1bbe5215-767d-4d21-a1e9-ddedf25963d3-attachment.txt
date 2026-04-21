@@ -1,0 +1,5 @@
+[32mINFO    [0m mobile_tests:test_negative_wifi.py:15 Opening Network & Internet
+[32mINFO    [0m mobile_tests:settings_page.py:19 Attempting to open Network & Internet
+[32mINFO    [0m mobile_tests:settings_page.py:29 Opened Network & Internet
+[32mINFO    [0m mobile_tests:test_negative_wifi.py:18 Trying to scroll to NON-EXISTENT element
+[32mINFO    [0m mobile_tests:test_negative_wifi.py:23 Test passed: Invalid element not found as expected

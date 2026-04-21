@@ -1,0 +1,170 @@
+2026-04-20 19:59:40,890 - INFO - Opening Network & Internet
+2026-04-20 19:59:40,890 - INFO - Attempting to open Network & Internet
+2026-04-20 19:59:41,301 - INFO - Opened Network & Internet
+2026-04-20 19:59:41,301 - INFO - Opening Wi-Fi
+2026-04-20 19:59:41,302 - INFO - Attempting to open Wi-Fi
+2026-04-20 19:59:41,952 - INFO - Opened Wi-Fi
+2026-04-20 19:59:41,952 - INFO - Validating Wi-Fi screen
+2026-04-20 19:59:41,953 - INFO - Checking if Wi-Fi screen is open
+2026-04-20 19:59:42,005 - INFO - Wi-Fi screen open: True
+2026-04-20 19:59:42,005 - INFO - Toggling Wi-Fi
+2026-04-20 19:59:42,005 - INFO - Attempting to toggle Wi-Fi
+2026-04-20 19:59:42,092 - INFO - Wi-Fi state before: false
+2026-04-20 19:59:42,223 - INFO - Clicked Wi-Fi toggle
+2026-04-20 19:59:43,735 - INFO - Wi-Fi state after: true
+2026-04-20 19:59:43,736 - INFO - State before: false, State after: true
+2026-04-20 20:03:15,381 - INFO - Opening Network & Internet
+2026-04-20 20:03:15,382 - INFO - Attempting to open Network & Internet
+2026-04-20 20:03:15,884 - INFO - Opened Network & Internet
+2026-04-20 20:03:15,884 - INFO - Opening Wi-Fi
+2026-04-20 20:03:15,884 - INFO - Attempting to open Wi-Fi
+2026-04-20 20:04:43,936 - INFO - Opening Network & Internet
+2026-04-20 20:04:43,937 - INFO - Attempting to open Network & Internet
+2026-04-20 20:04:44,127 - INFO - Opened Network & Internet
+2026-04-20 20:04:44,127 - INFO - Opening Wi-Fi
+2026-04-20 20:04:44,127 - INFO - Attempting to open Wi-Fi
+2026-04-20 20:04:44,359 - INFO - Opened Wi-Fi
+2026-04-20 20:04:44,360 - INFO - Validating Wi-Fi screen
+2026-04-20 20:04:44,360 - INFO - Checking if Wi-Fi screen is open
+2026-04-20 20:04:45,553 - INFO - Wi-Fi screen open: True
+2026-04-20 20:04:45,553 - INFO - Toggling Wi-Fi
+2026-04-20 20:04:45,553 - INFO - Attempting to toggle Wi-Fi
+2026-04-20 20:04:45,778 - INFO - Wi-Fi state before: true
+2026-04-20 20:04:46,138 - INFO - Clicked Wi-Fi toggle
+2026-04-20 20:04:48,080 - INFO - Wi-Fi state after: false
+2026-04-20 20:04:48,080 - INFO - State before: true, State after: false
+2026-04-20 20:24:49,156 - INFO - Opening Network & Internet
+2026-04-20 20:24:49,157 - INFO - Attempting to open Network & Internet
+2026-04-20 20:24:49,529 - INFO - Opened Network & Internet
+2026-04-20 20:24:49,530 - INFO - Opening Wi-Fi
+2026-04-20 20:24:49,530 - INFO - Attempting to open Wi-Fi
+2026-04-20 20:24:49,687 - INFO - Opened Wi-Fi
+2026-04-20 20:24:49,688 - INFO - Validating Wi-Fi screen
+2026-04-20 20:24:49,688 - INFO - Checking if Wi-Fi screen is open
+2026-04-20 20:24:50,008 - INFO - Wi-Fi screen open: True
+2026-04-20 20:24:50,010 - INFO - Toggling Wi-Fi
+2026-04-20 20:24:50,011 - INFO - Attempting to toggle Wi-Fi
+2026-04-20 20:24:52,460 - INFO - Wi-Fi state before: false
+2026-04-20 20:24:52,663 - INFO - Clicked Wi-Fi toggle
+2026-04-20 20:24:53,809 - INFO - Wi-Fi state after: true
+2026-04-20 20:24:53,815 - INFO - State before: false, State after: true
+2026-04-20 20:41:32,833 - INFO - Opening Network & Internet
+2026-04-20 20:41:32,834 - INFO - Attempting to open Network & Internet
+2026-04-20 20:41:33,710 - INFO - Opened Network & Internet
+2026-04-20 20:41:33,710 - INFO - Opening Wi-Fi
+2026-04-20 20:41:33,711 - INFO - Attempting to open Wi-Fi
+2026-04-20 20:43:09,295 - INFO - Opening Network & Internet
+2026-04-20 20:43:09,296 - INFO - Attempting to open Network & Internet
+2026-04-20 20:43:09,501 - INFO - Opened Network & Internet
+2026-04-20 20:43:09,501 - INFO - Opening Wi-Fi
+2026-04-20 20:43:09,502 - INFO - Attempting to open Wi-Fi
+2026-04-20 20:43:09,672 - INFO - Opened Wi-Fi
+2026-04-20 20:43:09,673 - INFO - Validating Wi-Fi screen
+2026-04-20 20:43:09,673 - INFO - Checking if Wi-Fi screen is open
+2026-04-20 20:43:10,992 - INFO - Wi-Fi screen open: True
+2026-04-20 20:43:10,995 - INFO - Toggling Wi-Fi
+2026-04-20 20:43:10,997 - INFO - Attempting to toggle Wi-Fi
+2026-04-20 20:43:11,305 - INFO - Wi-Fi state before: true
+2026-04-20 20:43:11,655 - INFO - Clicked Wi-Fi toggle
+2026-04-20 20:43:12,697 - INFO - Wi-Fi state after: false
+2026-04-20 20:43:12,701 - INFO - State before: true, State after: false
+2026-04-21 10:35:24,663 - INFO - Opening Network & Internet
+2026-04-21 10:35:24,667 - INFO - Attempting to open Network & Internet
+2026-04-21 10:35:25,028 - INFO - Opened Network & Internet
+2026-04-21 10:35:25,029 - INFO - Opening Wi-Fi
+2026-04-21 10:35:25,029 - INFO - Scrolling to Wi-Fi
+2026-04-21 10:35:27,015 - INFO - Opened Wi-Fi
+2026-04-21 10:35:27,015 - INFO - Validating Wi-Fi screen
+2026-04-21 10:35:27,015 - INFO - Checking if Wi-Fi screen is open
+2026-04-21 10:35:28,157 - INFO - Wi-Fi screen open: True
+2026-04-21 10:35:28,158 - INFO - Toggling Wi-Fi
+2026-04-21 10:35:28,158 - INFO - Attempting to toggle Wi-Fi
+2026-04-21 10:35:28,255 - INFO - Wi-Fi state before: false
+2026-04-21 10:35:28,444 - INFO - Clicked Wi-Fi toggle
+2026-04-21 10:35:29,446 - INFO - Wi-Fi state after: true
+2026-04-21 10:35:29,446 - INFO - State before: false, State after: true
+2026-04-21 10:37:50,319 - INFO - Opening Network & Internet
+2026-04-21 10:37:50,319 - INFO - Attempting to open Network & Internet
+2026-04-21 10:39:00,309 - INFO - Opening Network & Internet
+2026-04-21 10:39:00,310 - INFO - Attempting to open Network & Internet
+2026-04-21 10:39:01,052 - INFO - Opened Network & Internet
+2026-04-21 10:39:01,053 - INFO - Opening Wi-Fi
+2026-04-21 10:39:01,053 - INFO - Scrolling to Wi-Fi
+2026-04-21 10:39:01,204 - INFO - Opened Wi-Fi
+2026-04-21 10:39:01,204 - INFO - Validating Wi-Fi screen
+2026-04-21 10:39:01,204 - INFO - Checking if Wi-Fi screen is open
+2026-04-21 10:39:02,788 - INFO - Wi-Fi screen open: True
+2026-04-21 10:39:02,789 - INFO - Toggling Wi-Fi
+2026-04-21 10:39:02,790 - INFO - Attempting to toggle Wi-Fi
+2026-04-21 10:39:03,201 - INFO - Wi-Fi state before: true
+2026-04-21 10:39:03,602 - INFO - Clicked Wi-Fi toggle
+2026-04-21 10:39:04,835 - INFO - Wi-Fi state after: false
+2026-04-21 10:39:04,836 - INFO - State before: true, State after: false
+2026-04-21 10:44:59,524 - INFO - Opening Network & Internet
+2026-04-21 10:44:59,525 - INFO - Attempting to open Network & Internet
+2026-04-21 10:44:59,758 - INFO - Opened Network & Internet
+2026-04-21 10:44:59,758 - INFO - Trying to scroll to NON-EXISTENT element
+2026-04-21 10:45:11,093 - INFO - Test passed: Invalid element not found as expected
+2026-04-21 10:45:15,758 - INFO - Opening Network & Internet
+2026-04-21 10:45:15,759 - INFO - Attempting to open Network & Internet
+2026-04-21 10:45:15,921 - INFO - Opened Network & Internet
+2026-04-21 10:45:15,922 - INFO - Opening Wi-Fi
+2026-04-21 10:45:15,922 - INFO - Scrolling to Wi-Fi
+2026-04-21 10:45:16,143 - INFO - Opened Wi-Fi
+2026-04-21 10:45:16,144 - INFO - Validating Wi-Fi screen
+2026-04-21 10:45:16,144 - INFO - Checking if Wi-Fi screen is open
+2026-04-21 10:45:17,033 - INFO - Wi-Fi screen open: True
+2026-04-21 10:45:17,040 - INFO - Toggling Wi-Fi
+2026-04-21 10:45:17,043 - INFO - Attempting to toggle Wi-Fi
+2026-04-21 10:45:17,881 - INFO - Wi-Fi state before: false
+2026-04-21 10:45:18,651 - INFO - Clicked Wi-Fi toggle
+2026-04-21 10:45:18,901 - INFO - Wi-Fi state after: true
+2026-04-21 10:45:18,904 - INFO - State before: false, State after: true
+2026-04-21 10:53:03,497 - INFO - Calling API to get expected state
+2026-04-21 10:53:05,216 - INFO - API returned expected state: false
+2026-04-21 10:53:05,217 - INFO - Opening Network & Internet
+2026-04-21 10:53:05,217 - INFO - Attempting to open Network & Internet
+2026-04-21 10:53:05,668 - INFO - Opened Network & Internet
+2026-04-21 10:53:05,669 - INFO - Opening Wi-Fi
+2026-04-21 10:53:05,669 - INFO - Scrolling to Wi-Fi
+2026-04-21 10:53:52,278 - INFO - Opening Network & Internet
+2026-04-21 10:53:52,278 - INFO - Attempting to open Network & Internet
+2026-04-21 10:54:26,785 - INFO - Opening Network & Internet
+2026-04-21 10:54:26,786 - INFO - Attempting to open Network & Internet
+2026-04-21 10:55:41,348 - INFO - Calling API to get expected state
+2026-04-21 10:55:42,838 - INFO - API returned expected state: false
+2026-04-21 10:55:42,839 - INFO - Opening Network & Internet
+2026-04-21 10:55:42,839 - INFO - Attempting to open Network & Internet
+2026-04-21 10:55:43,169 - INFO - Opened Network & Internet
+2026-04-21 10:55:43,169 - INFO - Opening Wi-Fi
+2026-04-21 10:55:43,169 - INFO - Scrolling to Wi-Fi
+2026-04-21 10:55:43,456 - INFO - Opened Wi-Fi
+2026-04-21 10:55:43,457 - INFO - Validating Wi-Fi screen
+2026-04-21 10:55:43,457 - INFO - Checking if Wi-Fi screen is open
+2026-04-21 10:55:45,259 - INFO - Wi-Fi screen open: True
+2026-04-21 10:55:45,259 - INFO - Attempting to toggle Wi-Fi
+2026-04-21 10:55:45,616 - INFO - Wi-Fi state before: true
+2026-04-21 10:55:45,935 - INFO - Clicked Wi-Fi toggle
+2026-04-21 10:55:47,405 - INFO - Wi-Fi state after: false
+2026-04-21 10:55:47,405 - INFO - UI state before: true
+2026-04-21 10:55:47,406 - INFO - UI state after: false
+2026-04-21 10:55:55,538 - INFO - Opening Network & Internet
+2026-04-21 10:55:55,539 - INFO - Attempting to open Network & Internet
+2026-04-21 10:55:56,188 - INFO - Opened Network & Internet
+2026-04-21 10:55:56,188 - INFO - Trying to scroll to NON-EXISTENT element
+2026-04-21 10:55:59,535 - INFO - Test passed: Invalid element not found as expected
+2026-04-21 10:56:04,293 - INFO - Opening Network & Internet
+2026-04-21 10:56:04,293 - INFO - Attempting to open Network & Internet
+2026-04-21 10:56:04,950 - INFO - Opened Network & Internet
+2026-04-21 10:56:04,951 - INFO - Opening Wi-Fi
+2026-04-21 10:56:04,951 - INFO - Scrolling to Wi-Fi
+2026-04-21 10:56:05,085 - INFO - Opened Wi-Fi
+2026-04-21 10:56:05,086 - INFO - Validating Wi-Fi screen
+2026-04-21 10:56:05,086 - INFO - Checking if Wi-Fi screen is open
+2026-04-21 10:56:05,130 - INFO - Wi-Fi screen open: True
+2026-04-21 10:56:05,131 - INFO - Toggling Wi-Fi
+2026-04-21 10:56:05,131 - INFO - Attempting to toggle Wi-Fi
+2026-04-21 10:56:05,203 - INFO - Wi-Fi state before: false
+2026-04-21 10:56:05,331 - INFO - Clicked Wi-Fi toggle
+2026-04-21 10:56:06,784 - INFO - Wi-Fi state after: true
+2026-04-21 10:56:06,784 - INFO - State before: false, State after: true
