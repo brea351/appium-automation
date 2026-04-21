@@ -6,7 +6,7 @@ from utils.logger import get_logger
 logger = get_logger()
 
 
-
+@pytest.mark.api
 @pytest.mark.mobile
 def test_api_ui_wifi_toggle(driver):
     page = SettingsPage(driver)

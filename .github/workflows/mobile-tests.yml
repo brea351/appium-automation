@@ -45,7 +45,7 @@ jobs:
           timeout 60s bash -c 'until nc -z localhost 4723; do sleep 1; done'
           
           # Run your pytest command
-          pytest -m api --alluredir=allure-results
+          pytest -m "api or mobile" --alluredir=allure-results
 
     - name: Upload Allure results
       if: always()
