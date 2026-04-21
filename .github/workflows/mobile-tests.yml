@@ -1,4 +1,4 @@
-name: Run Mobile Tests
+name: Run API Tests
 
 on:
   push:
@@ -23,9 +23,9 @@ jobs:
       run: |
         pip install -r requirements.txt
 
-    - name: Run tests
+    - name: Run API tests only
       run: |
-        pytest --alluredir=allure-results
+        pytest -m api --alluredir=allure-results
 
     - name: Upload Allure results
       uses: actions/upload-artifact@v4

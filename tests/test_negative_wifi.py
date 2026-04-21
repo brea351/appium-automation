@@ -7,7 +7,7 @@ from selenium.common.exceptions import NoSuchElementException
 
 logger = get_logger()
 
-
+@pytest.mark.mobile
 @allure.step("Validate scrolling to invalid element fails")
 def test_scroll_to_invalid_element(driver):
     page = SettingsPage(driver)

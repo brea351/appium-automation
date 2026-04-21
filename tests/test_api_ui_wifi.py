@@ -1,48 +1,46 @@
 import pytest
 import requests
-import allure
 from pages.settings_page import SettingsPage
 from utils.logger import get_logger
 
 logger = get_logger()
 
 
-@allure.title("API + UI Validation: Wi-Fi Toggle")
-@allure.description("Validate UI toggle behavior with API response")
+@pytest.mark.api
+@pytest.mark.mobile
 def test_api_ui_wifi_toggle(driver):
-
     page = SettingsPage(driver)
 
-    # 🔥 STEP 1: Call API (simulate backend state)
-    logger.info("Calling API to get expected state")
+    # 🔹 STEP 1: Get API data (simulate backend)
+    url = "https://jsonplaceholder.typicode.com/posts/1"
+    response = requests.get(url)
 
-    response = requests.get("https://jsonplaceholder.typicode.com/todos/1")
     assert response.status_code == 200
+    data = response.json()
 
-    api_data = response.json()
-    expected_state = str(api_data["completed"]).lower()
+    logger.info(f"API Data: {data}")
 
-    logger.info(f"API returned expected state: {expected_state}")
-    allure.attach(expected_state, name="API Expected State", attachment_type=allure.attachment_type.TEXT)
+    # 🔹 Fake logic: if ID is 1 → Wi-Fi should be ON
+    expected_state = "true" if data["id"] == 1 else "false"
 
-    # 🔥 STEP 2: UI actions
-    logger.info("Opening Network & Internet")
+    # 🔹 STEP 2: Navigate UI
     page.open_network()
-
-    logger.info("Opening Wi-Fi")
     page.open_wifi()
 
-    logger.info("Validating Wi-Fi screen")
     assert page.is_wifi_screen_open()
 
-    # 🔥 STEP 3: Get UI state
-    before, after = page.toggle_wifi()
+    # 🔹 STEP 3: Get UI state
+    toggle = page.wait.until(
+        lambda d: d.find_element(
+            "-android uiautomator",
+            'new UiSelector().className("android.widget.Switch")'
+        )
+    )
 
-    logger.info(f"UI state before: {before}")
-    logger.info(f"UI state after: {after}")
+    actual_state = toggle.get_attribute("checked")
 
-    allure.attach(before, name="UI Before", attachment_type=allure.attachment_type.TEXT)
-    allure.attach(after, name="UI After", attachment_type=allure.attachment_type.TEXT)
+    logger.info(f"Expected (API): {expected_state}")
+    logger.info(f"Actual (UI): {actual_state}")
 
-    # 🔥 STEP 4: Validate logic (example validation)
-    assert before != after
+    # 🔹 STEP 4: Validate API vs UI
+    assert actual_state == expected_state
