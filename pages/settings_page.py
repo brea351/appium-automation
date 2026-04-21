@@ -6,77 +6,77 @@ from utils.gestures import scroll_to_text
 
 logger = get_logger()
 
+# ... (existing imports)
 
 class SettingsPage:
-
     def __init__(self, driver):
         self.driver = driver
         self.wait = WebDriverWait(driver, 15)
 
-    # 🔹 Open Network & Internet
     @allure.step("Open Network & Internet settings")
     def open_network(self):
         logger.info("Attempting to open Network & Internet")
-
-        network = self.wait.until(
-            EC.presence_of_element_located((
-                "-android uiautomator",
-                'new UiSelector().textContains("Network")'
-            ))
-        )
-        network.click()
+        
+        # 🔹 FIX: Use a case-insensitive regex scroll to find the entry point
+        # This is MUCH more reliable than a static text search
+        try:
+            network = scroll_to_text(self.driver, "Network")
+            network.click()
+        except Exception as e:
+            logger.error(f"Could not find Network entry: {e}")
+            # Fallback for some emulators where it's called 'Connections'
+            network = scroll_to_text(self.driver, "Connections")
+            network.click()
 
         logger.info("Opened Network & Internet")
 
-    # 🔹 Open Wi-Fi (UPDATED WITH SCROLL)
     @allure.step("Open Wi-Fi settings")
     def open_wifi(self):
         logger.info("Scrolling to Wi-Fi")
-
-        wifi = scroll_to_text(self.driver, "Wi")
-
+        # 🔹 FIX: Ensure we use the full word or regex to avoid matching 'Wired'
+        wifi = scroll_to_text(self.driver, "Wi-Fi")
         wifi.click()
-
         logger.info("Opened Wi-Fi")
 
-    # 🔹 Verify Wi-Fi screen
     @allure.step("Verify Wi-Fi screen is displayed")
     def is_wifi_screen_open(self):
         logger.info("Checking if Wi-Fi screen is open")
-
-        wifi_title = self.wait.until(
-            EC.presence_of_element_located((
-                "-android uiautomator",
-                'new UiSelector().textContains("Wi")'
-            ))
-        )
-
-        result = wifi_title is not None
+        # 🔹 FIX: Use visibility check rather than just presence
+        try:
+            wifi_title = self.wait.until(
+                EC.visibility_of_element_located((
+                    "-android uiautomator",
+                    'new UiSelector().textMatches("(?i)Wi-Fi")'
+                ))
+            )
+            result = True
+        except:
+            result = False
 
         logger.info(f"Wi-Fi screen open: {result}")
-        allure.attach(str(result), name="Wi-Fi Screen Status", attachment_type=allure.attachment_type.TEXT)
-
         return result
 
-    # 🔹 Toggle Wi-Fi
     @allure.step("Toggle Wi-Fi and validate state change")
     def toggle_wifi(self):
         logger.info("Attempting to toggle Wi-Fi")
 
+        # 🔹 FIX: Some switches have a specific ID, but className is okay.
+        # Ensure we wait for visibility.
         toggle = self.wait.until(
-            EC.presence_of_element_located((
+            EC.visibility_of_element_located((
                 "-android uiautomator",
                 'new UiSelector().className("android.widget.Switch")'
             ))
         )
 
-        state_before = toggle.get_attribute("checked")
+        state_before = toggle.get_attribute("checked") == "true"
         logger.info(f"Wi-Fi state before: {state_before}")
 
-        allure.attach(state_before, name="State Before", attachment_type=allure.attachment_type.TEXT)
-
         toggle.click()
-        logger.info("Clicked Wi-Fi toggle")
+        
+        # 🔹 IMPROVEMENT: Use a short wait for the toggle state to actually flip
+        import time
+        time.sleep(1) 
 
         # Refresh element
         toggle = self.driver.find_element(
@@ -84,9 +84,7 @@ class SettingsPage:
             'new UiSelector().className("android.widget.Switch")'
         )
 
-        state_after = toggle.get_attribute("checked")
+        state_after = toggle.get_attribute("checked") == "true"
         logger.info(f"Wi-Fi state after: {state_after}")
-
-        allure.attach(state_after, name="State After", attachment_type=allure.attachment_type.TEXT)
 
         return state_before, state_after
