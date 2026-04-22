@@ -15,6 +15,7 @@ def test_wifi_toggle(driver):
 
     logger.info("Opening Wi-Fi")
     page.open_wifi()
+    time.sleep(2)
 
     logger.info("Validating Wi-Fi screen")
     assert page.is_wifi_screen_open()

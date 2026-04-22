@@ -26,6 +26,7 @@ def test_api_ui_wifi_toggle(driver):
     # 🔹 STEP 2: Navigate UI
     page.open_network()
     page.open_wifi()
+    time.sleep(2)
 
     assert page.is_wifi_screen_open()
 
