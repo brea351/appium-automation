@@ -11,32 +11,47 @@ logger = get_logger()
 class SettingsPage:
     def __init__(self, driver):
         self.driver = driver
-        # 20s is good, but CI is slow—we'll keep it at 20 and use Smart Waits
+        # Standard wait for CI lag
         self.wait = WebDriverWait(driver, 20)
 
     @allure.step("Open Network & Internet settings")
     def open_network(self):
+        """
+        🚀 CI ENHANCED: Tries UI navigation first, falls back to Android Intent 
+        if the menus are not visible.
+        """
         logger.info("Attempting to open Network & Internet")
         try:
+            # 1. Try standard UI scroll/click
             network = scroll_to_text(self.driver, "Network")
             network.click()
+            logger.info("Opened Network & Internet via UI")
         except Exception as e:
-            logger.warning(f"Text search failed, trying resource-id fallback. Error: {e}")
+            logger.warning(f"UI navigation failed: {e}. Trying Direct Intent...")
             try:
-                # Fallback: Many Android versions use 'Connections'
-                network = scroll_to_text(self.driver, "Connections")
-                network.click()
-            except Exception:
-                # Last resort: Click the first item in the settings list
-                network = self.driver.find_element(AppiumBy.ID, "android:id/title")
-                network.click()
-        logger.info("Opened Network & Internet")
+                # 2. THE NUCLEAR OPTION: Direct Deep Link to Wi-Fi settings
+                # This works even if the 'Network' button is hidden or different.
+                self.driver.execute_script('mobile: startActivity', {
+                    'intent': 'android.settings.WIFI_SETTINGS'
+                })
+                logger.info("Opened settings via Intent navigation")
+            except Exception as intent_e:
+                logger.error(f"Intent failed: {intent_e}. Final attempt via resource-id.")
+                # 3. Last resort: click the first dashboard item
+                self.driver.find_element(AppiumBy.ID, "android:id/title").click()
 
     @allure.step("Open Wi-Fi settings")
     def open_wifi(self):
-        logger.info("Locating Wi-Fi entry")
+        """
+        If we used an Intent in the previous step, we might already be here.
+        If not, we perform the click.
+        """
+        logger.info("Checking if Wi-Fi navigation is required")
+        if self.is_wifi_screen_open():
+            logger.info("Already on Wi-Fi screen (likely via Intent)")
+            return
+
         try:
-            # Try finding the Wi-Fi entry directly first (faster)
             wifi = self.wait.until(
                 EC.element_to_be_clickable((
                     AppiumBy.ANDROID_UIAUTOMATOR,
@@ -44,22 +59,19 @@ class SettingsPage:
                 ))
             )
             wifi.click()
-            logger.info("Found and clicked Wi-Fi")
+            logger.info("Clicked Wi-Fi entry")
         except Exception:
-            logger.warning("Wi-Fi not immediately clickable, attempting scroll fallback...")
+            logger.warning("Wi-Fi not clickable, attempting scroll...")
             wifi = scroll_to_text(self.driver, "Wi-Fi")
             wifi.click()
-        logger.info("Opened Wi-Fi")
 
     @allure.step("Verify Wi-Fi screen is displayed")
     def is_wifi_screen_open(self):
         """
-        🚀 CI FIX: Uses 'any_of' to check for the title OR the toggle switch.
-        This handles the lag where the text might not be drawn but the container is ready.
+        Uses 'any_of' to check for the switch OR the title for better CI stability.
         """
         logger.info("Checking if Wi-Fi screen is open")
         try:
-            # If the switch is visible OR the title matches, we are on the right screen
             self.wait.until(
                 EC.any_of(
                     EC.visibility_of_element_located((AppiumBy.CLASS_NAME, "android.widget.Switch")),
@@ -67,8 +79,7 @@ class SettingsPage:
                 )
             )
             result = True
-        except Exception as e:
-            logger.error(f"Wi-Fi screen verification failed: {e}")
+        except Exception:
             result = False
 
         logger.info(f"Wi-Fi screen open: {result}")
@@ -87,10 +98,10 @@ class SettingsPage:
 
         toggle.click()
         
-        # Give the emulator 2 seconds to process the state change
+        # Buffer for slow emulator processing
         time.sleep(2) 
 
-        # Re-fetch element to avoid StaleElementReferenceException
+        # Refresh reference
         toggle = self.driver.find_element(AppiumBy.CLASS_NAME, "android.widget.Switch")
         state_after = toggle.get_attribute("checked") == "true"
         

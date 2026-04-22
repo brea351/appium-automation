@@ -9,7 +9,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    # 🔹 Increase job timeout because emulators without KVM take a long time
+    # 🔹 Increased job timeout because emulators without KVM on Ubuntu take a long time
     timeout-minutes: 30 
 
     steps:
@@ -39,22 +39,29 @@ jobs:
       uses: reactivecircus/android-emulator-runner@v2
       with:
         api-level: 29
-        # 🔹 Required for Ubuntu runners to stay stable
         target: default
         arch: x86
         profile: pixel_6
         disable-animations: true
         force-avd-creation: false
-        # 🔹 This is the execution script
         script: |
-          # Start Appium server in the background with extra timeout buffer
+          # 1. Start Appium in the background
           appium --log-level info & 
           
-          # Wait for Appium to be ready
+          # 2. Wait for Appium Server to be ready
           timeout 60s bash -c 'until nc -z localhost 4723; do sleep 1; done'
           echo "Appium Server is up and running!"
+          
+          # 3. 🔹 NEW: Wait for the emulator to be REALLY ready
+          echo "Waiting for emulator to finish booting..."
+          adb wait-for-device
+          adb shell 'while [[ "$(getprop sys.boot_completed)" != "1" ]]; do sleep 5; done'
+          
+          # Give the system UI a few extra seconds to settle
+          sleep 5
+          echo "Emulator is fully ready and settled!"
 
-          # Run pytest with a retry mechanism for flakiness
+          # 4. Run your pytest command
           pytest -m "api or mobile" --alluredir=allure-results
 
     - name: Upload Allure results
