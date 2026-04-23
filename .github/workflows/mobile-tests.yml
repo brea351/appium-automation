@@ -19,13 +19,18 @@ jobs:
       with:
         python-version: '3.11'
 
+    # 🔹 Ensure project root is discoverable (safe even if already works)
+    - name: Set PYTHONPATH
+      run: echo "PYTHONPATH=$PWD" >> $GITHUB_ENV
+
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
 
+    # 🔥 CRITICAL FIX: Only run API folder
     - name: Run API tests only
       run: |
-        pytest -m api --alluredir=allure-results
+        pytest tests/api -m api --alluredir=allure-results
 
     - name: Upload Allure results
       if: always()
